@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CardItem } from '../../components/card-item/card-item.component';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,18 @@ import { CardItem } from '../../components/card-item/card-item.component';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  public items: CardItem[] = [{
-    title: 'Card 1',
-    description: 'This is the first card'
-  }, {
-    title: 'Card 2',
-    description: 'This is the second card'
-  }, {
-    title: 'Card 3',
-    description: 'This is the third card'
-  }]
+  public items: CardItem[] = []
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.dataService.getData().subscribe(data => {
+      this.items = data.map(item => {
+        return {
+          title: item.name,
+          description: item.description
+        };
+      });
+    });
+  }
 }
