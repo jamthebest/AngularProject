@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { MaterialModule } from './material/material.module';
+import { CardListComponent } from './components/card-list/card-list.component';
+import { CardItemComponent } from './components/card-item/card-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardListComponent,
+    CardItemComponent,
   ],
   imports: [
     BrowserModule,
