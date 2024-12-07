@@ -9,13 +9,15 @@ import { MaterialModule } from './material/material.module';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CustomButtonComponent } from './components/custom-button/custom-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardListComponent,
     CardItemComponent,
-    HomeComponent
+    HomeComponent,
+    CustomButtonComponent,
   ],
   imports: [
     BrowserModule,
