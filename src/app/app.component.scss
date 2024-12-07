@@ -6,7 +6,7 @@ html, body {
 .app-container {
     height: 100%;
     .drawer-container {
-      height: 100%;
+      height: calc(100% - 64px);
 
       mat-drawer {
         border-right: solid 1px;
@@ -43,6 +43,10 @@ html, body {
             font-size: 20px;
             font-weight: bold;
         }
+      }
+
+      .drawer-content {
+        padding: 0px 10px;
       }
     }
 }

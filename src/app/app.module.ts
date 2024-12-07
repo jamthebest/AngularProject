@@ -8,12 +8,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MaterialModule } from './material/material.module';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardListComponent,
     CardItemComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
