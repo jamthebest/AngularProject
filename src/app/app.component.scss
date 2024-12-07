@@ -7,6 +7,12 @@ html, body {
     height: 100%;
     .drawer-container {
       height: 100%;
+
+      mat-drawer {
+        border-right: solid 1px;
+        border-radius: 0;
+      }
+
       .drawer-items {
         display: flex;
         flex-direction: column;
