@@ -10,6 +10,7 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CustomButtonComponent } from './components/custom-button/custom-button.component';
+import { CustomDrawerComponent } from './components/custom-drawer/custom-drawer.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +19,10 @@ import { CustomButtonComponent } from './components/custom-button/custom-button.
     CardItemComponent,
     HomeComponent,
     CustomButtonComponent,
+    CustomDrawerComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MaterialModule
-  ],
-  providers: [
-    provideAnimationsAsync()
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, MaterialModule],
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

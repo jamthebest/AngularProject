@@ -1,28 +1,7 @@
 <div class="app-container">
-  <mat-toolbar color="primary" class="navbar-color mat-elevation-z8 p-0" style="z-index: 2">
-    <button mat-icon-button aria-label="Dashboard" (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Dashboard</span>
-  </mat-toolbar>
-  <mat-drawer-container fxFlex class="drawer-container">
-    <mat-drawer #drawer mode="side" opened>
-      <div class="drawer-items">
-        <div class="user-container">
-          <mat-icon class="user-avatar">person</mat-icon>
-          <div class="user-name">
-            <span>Username</span>
-            <span>user&#64;gmail.com</span>
-          </div>
-        </div>
-        <mat-divider></mat-divider>
-        <app-custom-button text="Home" icon="add"></app-custom-button>
-        <app-custom-button text="About" icon="add"></app-custom-button>
-      </div>
-    </mat-drawer>
-  
-    <!--PAGES-->
-    <mat-drawer-content class="drawer-content"><router-outlet></router-outlet></mat-drawer-content>
-  
-  </mat-drawer-container>
+  <app-custom-drawer
+    [title]="title"
+    [icon]="icon"
+    [options]="drawerOptions"
+  ></app-custom-drawer>
 </div>
