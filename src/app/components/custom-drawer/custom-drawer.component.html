@@ -19,7 +19,7 @@
   </button>
 </mat-toolbar>
 <mat-drawer-container class="drawer-container">
-  <mat-drawer #drawer mode="side" opened>
+  <mat-drawer #drawer mode="side" [opened]="!isMobile">
     <div class="drawer-items">
       <div class="user-container">
         <mat-icon class="user-avatar">person</mat-icon>

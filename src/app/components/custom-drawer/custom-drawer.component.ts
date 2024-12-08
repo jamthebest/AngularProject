@@ -16,4 +16,8 @@ export class CustomDrawerComponent {
   @Input() title!: string;
   @Input() icon!: string;
   @Input() options: DrawerOptions[] = [];
+
+  public get isMobile(): boolean {
+    return screen.width < 768;
+  }
 }
