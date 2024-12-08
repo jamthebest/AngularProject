@@ -1,12 +1,15 @@
+<!-- Toolbar with primary color -->
 <mat-toolbar
   color="primary"
   class="navbar-color mat-elevation-z8 p-0"
   style="z-index: 2"
 >
+  <!-- Button to toggle the drawer -->
   <button mat-icon-button aria-label="Dashboard" (click)="drawer.toggle()">
-    <mat-icon>{{ icon }}</mat-icon>
+    <mat-icon>{{ icon }}</mat-icon> <!-- Displays the icon dynamically -->
   </button>
   <span>{{ title }}</span>
+  <!-- Spacer to push the remaining buttons to the right -->
   <span class="toolbar-spacer"></span>
   <button mat-icon-button>
     <mat-icon color="accent">search</mat-icon>
@@ -18,9 +21,11 @@
     <mat-icon color="accent">more_vert</mat-icon>
   </button>
 </mat-toolbar>
+<!-- Drawer container for side navigation -->
 <mat-drawer-container class="drawer-container">
   <mat-drawer #drawer mode="side" [opened]="!isMobile">
     <div class="drawer-items">
+      <!-- User information section -->
       <div class="user-container">
         <mat-icon class="user-avatar">person</mat-icon>
         <div class="user-name">
@@ -28,19 +33,22 @@
           <span>user&#64;gmail.com</span>
         </div>
       </div>
+      <!-- Divider to separate sections -->
       <mat-divider></mat-divider>
+      <!-- Dynamic list of navigation options -->
       @for (item of options; track $index) {
-      <app-custom-button
-        [text]="item.text"
-        [icon]="item.icon"
-        [url]="item.url"
-      ></app-custom-button>
+        <!-- Custom button component for navigation -->
+        <app-custom-button
+          [text]="item.text"
+          [icon]="item.icon"
+          [url]="item.url"
+        ></app-custom-button>
       }
     </div>
   </mat-drawer>
-
-  <!--PAGES-->
-  <mat-drawer-content class="drawer-content"
-    ><router-outlet></router-outlet
-  ></mat-drawer-content>
+  <!-- Main content area -->
+  <mat-drawer-content class="drawer-content">
+    <!-- Router outlet for rendering pages dynamically -->
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
 </mat-drawer-container>
