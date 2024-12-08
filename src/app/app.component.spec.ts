@@ -1,15 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { MaterialModule } from './material/material.module';
+import { CustomDrawerComponent } from './components/custom-drawer/custom-drawer.component';
+import { CustomButtonComponent } from './components/custom-button/custom-button.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterModule.forRoot([])
-      ],
+      imports: [RouterModule.forRoot([]), MaterialModule],
       declarations: [
-        AppComponent
+        AppComponent,
+        CustomDrawerComponent,
+        CustomButtonComponent,
       ],
     }).compileComponents();
   });
@@ -20,16 +23,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-project'`, () => {
+  it(`should have as title 'Dashboard'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-project');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-project');
+    expect(app.title).toEqual('Dashboard');
   });
 });
